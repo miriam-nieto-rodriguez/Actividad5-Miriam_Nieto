@@ -1,0 +1,35 @@
+<header>
+  <h1> Tablón de noticas</h1>
+</header>
+
+<div class="formulario">
+    <!-- TWO DATA BINDING- FORMULARIO -->
+    <aside>
+        <div>
+            <input type="text" placeholder="Titulo" [(ngModel)]="tituloNuevo">
+        </div>
+        <div>
+             <input type="text" placeholder="URL de la imagen" [(ngModel)]="imagenNueva">
+        </div>
+        <div>
+            <textarea placeholder="Texto" [(ngModel)]="textoNuevo"></textarea>
+        </div>
+        <div>
+            <input type="text" placeholder="Fecha" [(ngModel)]="fechaNueva">
+        </div>
+        <button (click)="guardarDatos ()"> Enviar</button>
+
+    </aside>
+</div>
+<section class="noticias">
+    @for (noticia of arrayNoticias; track noticia){
+    <article>
+        <h2>{{noticia.titulo}}</h2>
+        <figure>
+            <img [src]="noticia.imagen" [alt]="noticia.titulo">
+        </figure>
+        <p>{{noticia.texto}}</p>
+        <small> {{noticia.fecha}}</small>
+    </article>
+    }
+</section>
