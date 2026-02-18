@@ -1,6 +1,6 @@
 export interface INoticia {
-    titulo: string,
     imagen: string,
+    titulo: string,
     texto: string,
     fecha: string
 }

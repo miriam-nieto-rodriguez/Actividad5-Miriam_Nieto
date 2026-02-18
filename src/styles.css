@@ -1,4 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+:root {
+    --color-titulos-hover: #1A434E;
+    --color-boton-fecha: #2E7D65;
+    --color-background-article: #F7FAFC;
+    --color-background-general-border-input: #E8E8F4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: sans-serif;
+    background-color: var(--color-background-general-border-input);
+    font-family: "Playfair", serif;
+    font-family: "Lora", serif;
+
 }

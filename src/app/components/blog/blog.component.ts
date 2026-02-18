@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, InputOptions } from '@angular/core';
 import { INoticia } from '../../interface/inoticia.interface';
 import { FormsModule } from '@angular/forms';
+import { NOTICIAS } from '../db/noticias.db';
 
 @Component({
   selector: 'app-blog',
@@ -9,29 +10,30 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './blog.component.css',
 })
 export class BlogComponent {
-  arrayNoticias: INoticia[] = [
-    {
-      titulo: "Nueva apertura en la ciudad",
-      imagen: "https://turismodecantabria.com/wp-content/uploads/2023/05/90911f81-faaa-dfe3-1185-798e6fc1e15f.jpg",
-      texto: "Hoy se ha inaugurado un nuevo centro cultural en el centro de la ciudad.",
-      fecha: "16/02/2026"
-    },
-    {
-      titulo: "Evento deportivo destacado",
-      imagen: "https://img.freepik.com/vector-gratis/fondo-torneo-baloncesto-creativo-deporte-alta-energia_1017-53128.jpg?semt=ais_user_personalization&w=740&q=80",
-      texto: "El campeonato local de baloncesto finalizó con un gran partido entre los equipos A y B.",
-      fecha: "01/02/2026"
-    }
 
-  ]
+  arrayNoticias: INoticia[] = NOTICIAS;
 
-  tituloNuevo = '';
-  imagenNueva = '';
-  textoNuevo = '';
-  fechaNueva = '';
-
-
-  guardarDatos (){
+  nuevaNoticia: INoticia = {
+    imagen: '',
+    titulo: '',
+    texto: '',
+    fecha: '',
 
   }
+
+  guardarDatos() {
+    const { imagen, titulo, texto, fecha } = this.nuevaNoticia;
+    if (imagen && titulo && texto && fecha) {
+
+      this.arrayNoticias.push({ ...this.nuevaNoticia });
+
+      this.nuevaNoticia = { imagen: '', titulo: '', texto: '', fecha: '' };
+
+    } else {
+      alert('Todos los campos son obligatorios');
+    }
+  }
+
+
 }
+
