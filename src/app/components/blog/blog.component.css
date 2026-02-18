@@ -1,81 +1,196 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-header {
+
+header h1 {
     text-align: center;
-    padding: 40px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif ;
-    color: #5D6953;
+    padding: 60px;
+    font-size: 35px;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    color: var(--color-titulos-hover);
+
 }
+
 .formulario {
-    background-color: #A3AB94;
-    width: 100%;
-    padding: 20px;
-    border-radius: 5px;
+    background-color: #FFFFFF;
+    padding: 50px;
     margin-bottom: 30px;
+
+    aside {
+        width: 50%; 
+        margin: 0 auto;
+    }
 
     input,
     textarea {
-        display: flex;
-        width: 50%;
+        width: 100%;
         margin-bottom: 10px;
+        display: block;
         padding: 8px;
-        border: 1px solid #5D6953;
-        border-radius: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: var(--color-background-general-border-input);
+        font-family: 'Lora', serif;
     }
 
+    input::placeholder,
+    textarea::placeholder {
+        color: #999;
+        font-size: 14px;
+        font-family: 'Lora', serif;
+        font-style: italic;
+    }
+
+    input:focus,
+    textarea:focus {
+        outline: none;
+        border-color: var(--color-background-general-border-input);
+        font-family: 'Lora', serif;
+        box-shadow: 0 0 0 2px rgba(122, 119, 198, 0.2);
+    }
+
+
+
     button {
-        background-color: #667058;
+        display: block;
+        margin-left: auto;
+        margin-top: 10px;
+        background-color:var(--color-boton-fecha);
         color: white;
         border: none;
         padding: 10px 20px;
         border-radius: 5px;
         cursor: pointer;
+        font-family: 'Lora', serif;
+    }
+
+    button:hover {
+        background-color: var(--color-titulos-hover);
     }
 
 }
 
 .noticias {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1600px;
+    margin: 40px auto;
+    padding: 0 20px;
+    grid-auto-rows: auto;
 
     article {
-        width: calc(30% - 10px);
-        border: 1px solid #49523F;
+        display: flex;
+        flex-direction: column;
         text-align: center;
-        box-shadow: 1px 2px 5px #5D6953;
-        padding: 15px;
-        background-color: #CED2C4;
-    }
+        background-color: var(--color-background-article);
+        border-radius: 20px;
+        overflow: hidden;
 
-    h2 {
-        margin-top: 0;
-        padding-bottom: 10px;
-        font-size: 20px;
-        color: #5D6953;
     }
 
     img {
         width: 100%;
-        height: auto;
+        height: 200px;
         display: block;
-        border-radius: 3px;
-        margin: 1px 0;
+        object-fit: cover;
+
     }
 
+    h2 {
+        padding: 15px;
+        font-size: 20px;
+        color: var(--color-titulos-hover);
+        font-family: 'Playfair Display', serif;
+    }
+
+
     p {
-        margin: 10px 0;
+        margin: 15px;
+        font-size: 14px;
+        color: #171917;
+        font-family: 'Lora', serif;
+        flex-grow: 0;
+        text-align: justify;
+        padding-bottom: 10px;
     }
 
     small {
-        color: #666;
+        font-size: 14px;
+        color: var(--color-boton-fecha);
+        font-weight: 500;
+        font-family: 'Lora', serif;
+        margin-top: auto;
+        margin-bottom: 25px;
     }
 
 }
 
+@media (min-width: 1920px) {
+    .noticias {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 30px;
+        max-width: 1700px;
+
+        p {
+            padding-bottom: 10px;
+        }
+
+        small {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+    }
+
+}
+
+
+@media (max-width: 900px) {
+    .noticias {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 1300px;
+        padding: 0 20px;
+    }
+
+    .formulario aside {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .noticias {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        grid-auto-rows: auto;
+        margin: 20px;
+        padding: 0 10px;
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        small {
+            font-size: 15px;
+        }
+    }
+
+    .formulario {
+        aside {
+            width: 100%;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px 0;
+        }
+    }
+
+    header h1 {
+        font-size: 24px;
+        padding: 20px 10px;
+        
+    }
+}

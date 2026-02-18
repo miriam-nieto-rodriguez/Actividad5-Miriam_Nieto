@@ -1,35 +1,36 @@
 <header>
-  <h1> Tablón de noticas</h1>
+    <h1> RINCONES DEL MUNDO</h1>
 </header>
 
 <div class="formulario">
-    <!-- TWO DATA BINDING- FORMULARIO -->
     <aside>
         <div>
-            <input type="text" placeholder="Titulo" [(ngModel)]="tituloNuevo">
+            <input type="text" placeholder="URL de la imagen" [(ngModel)]="nuevaNoticia.imagen">
         </div>
         <div>
-             <input type="text" placeholder="URL de la imagen" [(ngModel)]="imagenNueva">
+            <input type="text" placeholder="Titulo" [(ngModel)]="nuevaNoticia.titulo">
         </div>
         <div>
-            <textarea placeholder="Texto" [(ngModel)]="textoNuevo"></textarea>
+            <textarea placeholder="Texto" [(ngModel)]="nuevaNoticia.texto"></textarea>
         </div>
         <div>
-            <input type="text" placeholder="Fecha" [(ngModel)]="fechaNueva">
+            <input type="text" placeholder="Fecha" [(ngModel)]="nuevaNoticia.fecha">
         </div>
         <button (click)="guardarDatos ()"> Enviar</button>
 
     </aside>
 </div>
+
 <section class="noticias">
     @for (noticia of arrayNoticias; track noticia){
     <article>
-        <h2>{{noticia.titulo}}</h2>
         <figure>
             <img [src]="noticia.imagen" [alt]="noticia.titulo">
         </figure>
+        <h2>{{noticia.titulo}}</h2>
         <p>{{noticia.texto}}</p>
         <small> {{noticia.fecha}}</small>
     </article>
     }
 </section>
+
