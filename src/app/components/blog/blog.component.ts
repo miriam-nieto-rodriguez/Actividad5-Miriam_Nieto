@@ -1,4 +1,4 @@
-import { Component, InputOptions } from '@angular/core';
+import { Component } from '@angular/core';
 import { INoticia } from '../../interface/inoticia.interface';
 import { FormsModule } from '@angular/forms';
 import { NOTICIAS } from '../db/noticias.db';
@@ -12,14 +12,17 @@ import { NOTICIAS } from '../db/noticias.db';
 export class BlogComponent {
 
   arrayNoticias: INoticia[] = NOTICIAS;
-
+  
   nuevaNoticia: INoticia = {
     imagen: '',
     titulo: '',
     texto: '',
     fecha: '',
-
+    
   }
+
+
+
 
   guardarDatos() {
     const { imagen, titulo, texto, fecha } = this.nuevaNoticia;
@@ -28,9 +31,11 @@ export class BlogComponent {
       this.arrayNoticias.push({ ...this.nuevaNoticia });
 
       this.nuevaNoticia = { imagen: '', titulo: '', texto: '', fecha: '' };
+      
 
     } else {
       alert('Todos los campos son obligatorios');
+      
     }
   }
 
