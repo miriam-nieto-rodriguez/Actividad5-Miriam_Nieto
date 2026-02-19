@@ -6,6 +6,7 @@
     --color-boton-fecha: #2E7D65;
     --color-background-article: #F7FAFC;
     --color-background-general-border-input: #E8E8F4;
+    --color-box-shadow: rgba(122, 119, 198, 0.2);
 }
 
 * {
@@ -16,7 +17,4 @@
 
 body {
     background-color: var(--color-background-general-border-input);
-    font-family: "Playfair", serif;
-    font-family: "Lora", serif;
-
 }
