@@ -5,8 +5,6 @@ header h1 {
     letter-spacing: 2px;
     font-family: 'Playfair Display', serif;
     color: var(--color-titulos-hover);
-    font-style:normal;
-
 }
 
 .formulario {
@@ -160,9 +158,10 @@ header h1 {
 @media (max-width: 600px) {
     .noticias {
         grid-template-columns: 1fr;
+        max-width: 400px;
         gap: 15px;
         grid-auto-rows: auto;
-        margin: 20px;
+        margin: 20px 40px;
         padding: 0 10px;
 
         h2 {

@@ -1,5 +1,4 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
 import { BlogComponent } from "./components/blog/blog.component";
 
 @Component({
@@ -9,5 +8,5 @@ import { BlogComponent } from "./components/blog/blog.component";
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('Actividad5-Miriam_Nieto');
+
 }

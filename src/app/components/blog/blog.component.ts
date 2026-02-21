@@ -21,9 +21,6 @@ export class BlogComponent {
     
   }
 
-
-
-
   guardarDatos() {
     const { imagen, titulo, texto, fecha } = this.nuevaNoticia;
     if (imagen && titulo && texto && fecha) {
@@ -32,13 +29,11 @@ export class BlogComponent {
 
       this.nuevaNoticia = { imagen: '', titulo: '', texto: '', fecha: '' };
       
-
     } else {
       alert('Todos los campos son obligatorios');
       
     }
   }
-
 
 }
 
